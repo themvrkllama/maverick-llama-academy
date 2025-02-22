@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+    <!-- Navigation Bar -->
     <header>
         <nav>
             <ul>
@@ -19,16 +21,7 @@
         </nav>
     </header>
 
-    <!-- Your content here -->
-
-    <!-- 🎵 Background Audio (Place it at the bottom inside <body>) -->
-    <audio autoplay loop>
-        <source src="assets/background-audio.mp3" type="audio/mpeg">
-        Your browser does not support the audio element.
-    </audio>
-
-</body>
-    
+    <!-- Floating Logo -->
     <img src="assets/logo.png" alt="Maverick Llama Academy" class="floating-logo">
 
     <!-- Hero Section -->
@@ -38,20 +31,23 @@
         <button onclick="location.href='#about'">Learn More</button>
     </div>
 
-    <section class="about">
+    <!-- About Section -->
+    <section id="about">
         <h2>About the Academy</h2>
         <p>Gamified, high-yield medical learning platform...</p>
     </section>
 
-
     <!-- Floating Fireflies -->
     <div id="fireflies"></div>
 
-    <!-- Background Music -->
-    <audio autoplay loop>
-        <source src="https://drive.google.com/uc?export=download&id=1_7KJrN_IWK6sm2aTk4qWYp2Vgn5-LRFv" type="audio/mpeg">
+    <!-- 🎵 Background Music -->
+    <audio id="bg-music" autoplay loop>
+        <source src="assets/background-audio.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
     </audio>
 
+    <!-- Link to JavaScript file -->
     <script src="script.js"></script>
+
 </body>
 </html>

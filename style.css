@@ -79,11 +79,19 @@ nav ul li a:hover::after {
 }
 
 .hero {
-    .hero {
-        background: transparent;
-    }
+    padding: 100px 20px;
+    background: rgba(0, 0, 0, 0.5); /* 50% transparent black */
+    color: white;
+    border-radius: 10px; /* Soft rounded edges */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Adds text glow */
 }
 
+.hero h1, .hero h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-shadow: 0 0 15px rgba(255, 215, 0, 1), /* Golden glow */
+                 0 0 30px rgba(255, 165, 0, 0.8); /* Orange glow */
+}
 
 button {
     background: #ffcc00;
@@ -100,19 +108,23 @@ button {
     width: 100vw;
     height: 100vh;
     overflow: hidden;
+    pointer-events: none;
+    z-index: 0; /* Behind everything */
 }
+
 .firefly {
     position: absolute;
-    width: 20px;  /* Increased size */
-    height: 20px; /* Increased size */
-    background: radial-gradient(circle, rgba(255,165,0,1) 30%, rgba(255,165,0,0) 80%);
+    width: calc(10px + 10 * var(--size));  /* Varying sizes */
+    height: calc(10px + 10 * var(--size));
+    background: radial-gradient(circle, rgba(255, 200, 50, 1) 20%, rgba(255, 200, 50, 0) 80%);
     border-radius: 50%;
-    opacity: 0.8;
-    animation: firefly-move 5s infinite alternate ease-in-out;
-    filter: blur(5px); /* Glow effect */
+    opacity: 0.9;
+    animation: firefly-move 8s infinite alternate ease-in-out;
+    filter: blur(5px); /* Stronger glow effect */
 }
 
 @keyframes firefly-move {
-    0% { transform: translateY(0) translateX(0); }
-    100% { transform: translateY(-50px) translateX(50px); }
+    0% { transform: translateY(0) translateX(0) scale(1); opacity: 0.8; }
+    50% { transform: translateY(-80px) translateX(100px) scale(1.2); opacity: 1; }
+    100% { transform: translateY(50px) translateX(-80px) scale(0.8); opacity: 0.6; }
 }
