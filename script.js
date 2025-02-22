@@ -1,7 +1,12 @@
 document.addEventListener("DOMContentLoaded", function() {
     const fireflyContainer = document.getElementById("fireflies");
 
-    for (let i = 0; i < 40; i++) { // Increased fireflies
+    if (!fireflyContainer) {
+        console.error("Firefly container not found!");
+        return; // Stop script if container is missing
+    }
+
+    for (let i = 0; i < 40; i++) { // More fireflies for better effect
         let firefly = document.createElement("div");
         firefly.classList.add("firefly");
 
@@ -21,18 +26,17 @@ document.addEventListener("DOMContentLoaded", function() {
 
 // Function to make fireflies move randomly
 function moveFirefly(firefly) {
-    let move = () => {
+    function move() {
         let x = Math.random() * window.innerWidth;
         let y = Math.random() * window.innerHeight;
         let duration = Math.random() * 5000 + 3000; // Random duration
 
-        firefly.style.transition = `transform ${duration}ms ease-in-out, opacity ${duration}ms ease-in-out`;
+        firefly.style.transition = `transform ${duration}ms linear, opacity ${duration}ms linear`;
         firefly.style.transform = `translate(${x}px, ${y}px) scale(${Math.random() * 1.5 + 0.5})`;
         firefly.style.opacity = Math.random() * 0.5 + 0.5;
 
         setTimeout(move, duration);
-    };
-
+    }
     move();
 }
 
