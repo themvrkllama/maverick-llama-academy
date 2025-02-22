@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function() {
     const fireflyContainer = document.getElementById("fireflies");
 
-    for (let i = 0; i < 30; i++) { // Increased number of fireflies
+    for (let i = 0; i < 50; i++) { // More fireflies!
         let firefly = document.createElement("div");
         firefly.classList.add("firefly");
 
@@ -16,6 +16,8 @@ document.addEventListener("DOMContentLoaded", function() {
         fireflyContainer.appendChild(firefly);
     }
 });
+
+// Fix audio autoplay issues
 document.addEventListener('DOMContentLoaded', function() {
     let audio = document.getElementById("bg-music");
     let playAudio = () => {

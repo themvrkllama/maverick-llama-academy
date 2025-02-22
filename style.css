@@ -101,6 +101,7 @@ button {
     cursor: pointer;
 }
 
+/* Fireflies Effect */
 #fireflies {
     position: fixed;
     top: 0;
@@ -109,18 +110,18 @@ button {
     height: 100vh;
     overflow: hidden;
     pointer-events: none;
-    z-index: 0; /* Behind everything */
+    z-index: -1;
 }
 
 .firefly {
     position: absolute;
-    width: calc(10px + 10 * var(--size));  /* Varying sizes */
+    width: calc(10px + 10 * var(--size));  
     height: calc(10px + 10 * var(--size));
     background: radial-gradient(circle, rgba(255, 200, 50, 1) 20%, rgba(255, 200, 50, 0) 80%);
     border-radius: 50%;
     opacity: 0.9;
     animation: firefly-move 8s infinite alternate ease-in-out;
-    filter: blur(5px); /* Stronger glow effect */
+    filter: blur(5px);
 }
 
 @keyframes firefly-move {
