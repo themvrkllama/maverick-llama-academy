@@ -11,7 +11,7 @@ body {
     position: absolute;
     top: 20px;
     left: 20px;
-    height: 150px; /* Increased size */
+    height: 250px; /* Increased size */
     animation: glowEffect 3s infinite alternate ease-in-out;
 }
 
@@ -79,9 +79,11 @@ nav ul li a:hover::after {
 }
 
 .hero {
-    padding: 100px 20px;
-    background: rgba(0, 0, 0, 0.5);
+    .hero {
+        background: transparent;
+    }
 }
+
 
 button {
     background: #ffcc00;
