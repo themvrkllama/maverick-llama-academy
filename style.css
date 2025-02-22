@@ -79,11 +79,14 @@ nav ul li a:hover::after {
 }
 
 .hero {
-    padding: 100px 20px;
+    display: inline-block;
+    padding: 20px 40px; /* Reduced height */
     background: rgba(0, 0, 0, 0.5); /* 50% transparent black */
     color: white;
     border-radius: 10px; /* Soft rounded edges */
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Adds text glow */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+    max-width: 600px; /* Keep it contained */
+    margin: 80px auto 20px; /* Center it */
 }
 
 .hero h1, .hero h2 {
