@@ -118,7 +118,7 @@ button {
 
 .firefly {
     position: absolute;
-    width: calc(10px + 10px * var(--size, 1));  /* Use default size if `--size` is missing */
+    width: calc(10px + 10px * var(--size, 1));  /* 🔹 Ensure default size */
     height: calc(10px + 10px * var(--size, 1));
     background: radial-gradient(circle, rgba(255, 200, 50, 1) 30%, rgba(255, 200, 50, 0) 80%);
     border-radius: 50%;

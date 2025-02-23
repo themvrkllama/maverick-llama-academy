@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
         firefly.style.left = `${x}px`;
         firefly.style.top = `${y}px`;
-        firefly.style.setProperty("--size", size);
+        firefly.style.setProperty("--size", size || 1);  // 🔹 Ensures `--size` is always valid
 
         fireflyContainer.appendChild(firefly);
 
