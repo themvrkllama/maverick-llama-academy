@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
         let x = Math.random() * window.innerWidth;
         let y = Math.random() * window.innerHeight;
-        let size = Math.random() * 1.5 + 0.5; // Randomized sizes
+        let size = Math.random() * 1.5 + 0.5 || 1; // Ensure a default size
 
         firefly.style.left = `${x}px`;
         firefly.style.top = `${y}px`;
@@ -32,7 +32,7 @@ function moveFirefly(firefly) {
         let duration = Math.random() * 8000 + 4000; // Slower, smoother movement
 
         firefly.style.transition = `transform ${duration}ms ease-in-out, opacity ${duration}ms ease-in-out`;
-        firefly.style.transform = `translate(${x}px, ${y}px) scale(${Math.random() * 1.5 + 0.5})`;
+        firefly.style.transform = `translate(${x}px, ${y}px) scale(${firefly.style.getPropertyValue("--size") || 1})`;
         firefly.style.opacity = 1; // Keep them visible
 
         setTimeout(move, duration);

@@ -118,14 +118,15 @@ button {
 
 .firefly {
     position: absolute;
-    width: calc(15px + 10 * var(--size));  /* Bigger fireflies */
-    height: calc(15px + 10 * var(--size));
-    background: radial-gradient(circle, rgba(255, 255, 100, 1) 30%, rgba(255, 255, 100, 0) 80%);
+    width: calc(10px + 10px * var(--size, 1));  /* Use default size if `--size` is missing */
+    height: calc(10px + 10px * var(--size, 1));
+    background: radial-gradient(circle, rgba(255, 200, 50, 1) 30%, rgba(255, 200, 50, 0) 80%);
     border-radius: 50%;
-    opacity: 1 !important; /* Forces visibility */
-    filter: blur(8px); /* Glow effect */
-    z-index: 9999; /* Ensure they appear above other elements */
+    opacity: 0.9;
+    animation: firefly-move 8s infinite alternate ease-in-out;
+    filter: blur(10px); /* Stronger glow effect */
 }
+
 
 @keyframes firefly-move {
     0% { transform: translateY(0) translateX(0) scale(1); opacity: 0.8; }
