@@ -26,17 +26,18 @@ document.addEventListener("DOMContentLoaded", function() {
 
 // Function to make fireflies move randomly
 function moveFirefly(firefly) {
-    function move() {
+    let move = () => {
         let x = Math.random() * window.innerWidth;
         let y = Math.random() * window.innerHeight;
-        let duration = Math.random() * 5000 + 3000; // Random duration
+        let duration = Math.random() * 8000 + 4000; // Slower, smoother movement
 
-        firefly.style.transition = `transform ${duration}ms linear, opacity ${duration}ms linear`;
+        firefly.style.transition = `transform ${duration}ms ease-in-out, opacity ${duration}ms ease-in-out`;
         firefly.style.transform = `translate(${x}px, ${y}px) scale(${Math.random() * 1.5 + 0.5})`;
-        firefly.style.opacity = Math.random() * 0.5 + 0.5;
+        firefly.style.opacity = 1; // Keep them visible
 
         setTimeout(move, duration);
-    }
+    };
+
     move();
 }
 
