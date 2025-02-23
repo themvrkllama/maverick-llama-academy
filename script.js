@@ -24,18 +24,20 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 });
 
-// Function to make fireflies move randomly
+// Function to make fireflies move **more randomly**
 function moveFirefly(firefly) {
     let move = () => {
         let x = Math.random() * window.innerWidth;
         let y = Math.random() * window.innerHeight;
-        let duration = Math.random() * 8000 + 4000; // Slower, smoother movement
+        let scale = Math.random() * 1.5 + 0.5; // 🔹 Randomized scaling
+        let duration = Math.random() * 5000 + 3000; // 🔹 Randomized duration (3s - 8s)
+        let delay = Math.random() * 3000; // 🔹 Each firefly starts at a different time
 
         firefly.style.transition = `transform ${duration}ms ease-in-out, opacity ${duration}ms ease-in-out`;
-        firefly.style.transform = `translate(${x}px, ${y}px) scale(${firefly.style.getPropertyValue("--size") || 1})`;
-        firefly.style.opacity = 1; // Keep them visible
+        firefly.style.transform = `translate(${x}px, ${y}px) scale(${scale})`;
+        firefly.style.opacity = Math.random() * 0.5 + 0.5; // 🔹 Random opacity
 
-        setTimeout(move, duration);
+        setTimeout(move, duration + delay); // 🔹 Adds a slight delay to make movement unpredictable
     };
 
     move();
